@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DasboardController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
 
 /*
@@ -20,10 +22,9 @@ Route::post('/login',[LoginController::class,'login'])->name('userlogin');
 Route::get('/register',[RegisterController::class,'index'])->name('register');
 Route::post('/add-user',[RegisterController::class,'addUser'])->name('addUser');
 
+Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
 
-// Route::get('/', function () {
-//     return view('auth.login');
-// });
+Route::get('/dasboard',[DasboardController::class,'index'])->name('dasboard');
 // Route::get('/dasboard', function () {
 //     return view('pages.home');
 // });

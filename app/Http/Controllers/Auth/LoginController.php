@@ -9,6 +9,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Validator;
 
+
 class LoginController extends Controller
 {
     /*
@@ -29,7 +30,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    // protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
      * Create a new controller instance.
@@ -48,23 +49,19 @@ class LoginController extends Controller
 	public function login(Request $request)
     {
 		// dd($request);
-		$validated = Validator::make($request->all(),[
-			'email'			=> 'required',
-            'password'		=> 'required',
-		]);
-		dd($validated->fails());
-		if($validated->fails())	{
-			dd($validated->errors()->messages());
+		$this->validate($request, [
+            'email'     => 'required|string|email|max:255',
+            'password'  => 'required|string|min:6|max:64',
+        ]);
+		// dd($validated->fails());
+		// dd(Auth::attempt());
+			if (Auth::attempt($request->only('email', 'password'))) {
 			
-		}else{
-			$credentials = $request->only('email', 'password');
-			if (Auth::attempt($credentials)) {
-				// return redirect()->intended('dashboard')
-				// 			->withSuccess('Signed in');
-				return view('pages.home');
-			}
-		}
-       
+				return redirect()->route('dasboard');
+			} else {
+		
+				return ;
+			}     
   
         // return redirect("login")->withSuccess('Login details are not valid');
     }
