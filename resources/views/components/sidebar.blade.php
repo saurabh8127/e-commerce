@@ -33,7 +33,7 @@
 										<path
 											d="M8,6C4.7,6,2,4.7,2,3s2.7-3,6-3s6,1.3,6,3S11.3,6,8,6z M2,5L2,5L2,5C2,5,2,5,2,5z M8,8c3.3,0,6-1.3,6-3v3c0,1.7-2.7,3-6,3S2,9.7,2,8V5C2,6.7,4.7,8,8,8z M14,5L14,5C14,5,14,5,14,5L14,5z M2,10L2,10L2,10C2,10,2,10,2,10z M8,13c3.3,0,6-1.3,6-3v3c0,1.7-2.7,3-6,3s-6-1.3-6-3v-3C2,11.7,4.7,13,8,13z M14,10L14,10C14,10,14,10,14,10L14,10z">
 										</path>
-									</svg></span><span class="sa-nav__title">Catalog</span><span
+									</svg></span><span class="sa-nav__title">Category</span><span
 									class="sa-nav__arrow"><svg xmlns="http://www.w3.org/2000/svg" width="6"
 										height="9" viewBox="0 0 6 9" fill="currentColor">
 										<path
@@ -41,22 +41,13 @@
 										</path>
 									</svg></span></a>
 							<ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
-								<li class="sa-nav__menu-item"><a href="app-products-list.html"
-										class="sa-nav__link"><span
-											class="sa-nav__menu-item-padding"></span><span
-											class="sa-nav__title">Products List</span></a></li>
-								<li class="sa-nav__menu-item"><a href="app-product.html"
-										class="sa-nav__link"><span
-											class="sa-nav__menu-item-padding"></span><span
-											class="sa-nav__title">Product</span></a></li>
-								<li class="sa-nav__menu-item"><a href="app-categories-list.html"
-										class="sa-nav__link"><span
-											class="sa-nav__menu-item-padding"></span><span
-											class="sa-nav__title">Categories List</span></a></li>
-								<li class="sa-nav__menu-item"><a href="app-category.html"
-										class="sa-nav__link"><span
-											class="sa-nav__menu-item-padding"></span><span
-											class="sa-nav__title">Category</span></a></li>
+								<li class="sa-nav__menu-item">
+									<a href="{{route('category')}}" class="sa-nav__link">
+										<span class="sa-nav__menu-item-padding"></span>
+										<span class="sa-nav__title">Add Category</span>
+									</a>
+								</li>
+									
 							</ul>
 						</li>
 						<li class="sa-nav__menu-item sa-nav__menu-item--has-icon"
